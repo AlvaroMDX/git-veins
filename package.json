@@ -76,7 +76,7 @@
   },
   "scripts": {
     "build": "esbuild media/src/main.js --bundle --format=iife --minify --outfile=media/main.js",
-    "package": "npm run build && npx @vscode/vsce@3.2.1 package --allow-missing-repository --no-rewrite-relative-links"
+    "package": "npm run build && npx @vscode/vsce@3.2.1 package"
   },
   "devDependencies": {
     "esbuild": "0.24.0",
