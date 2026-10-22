@@ -17,6 +17,20 @@
 
 ![Git Veins en el panel inferior, con todos los nombres](images/panel.png)
 
+## Instalación
+
+1. Descarga `git-veins-0.4.0.vsix` de la última [release](https://github.com/AlvaroMDX/git-veins/releases/latest).
+2. En VS Code: **Extensiones → ··· → Install from VSIX…** y elige el fichero.
+   También desde un terminal: `code --install-extension git-veins-0.4.0.vsix`.
+3. Recarga la ventana (**Developer: Reload Window**).
+
+Para compilarla desde el código:
+
+```bash
+npm install
+npm run package
+```
+
 ## Cómo se usa
 
 1. Abre la pestaña **Git Veins** del panel inferior, o pulsa **❤ Venas** en la barra de estado.
