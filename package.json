@@ -1,0 +1,85 @@
+{
+  "name": "git-veins",
+  "displayName": "Git Veins",
+  "description": "Tu historial de git como una lámina anatómica en 3D: cada rama es un vaso sanguíneo, con ficha de rama y tareas de Redmine.",
+  "version": "0.4.0",
+  "publisher": "git-veins",
+  "author": {
+    "name": "Alvaro Martos Diez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlvaroMDX/git-veins.git"
+  },
+  "homepage": "https://github.com/AlvaroMDX/git-veins#readme",
+  "bugs": {
+    "url": "https://github.com/AlvaroMDX/git-veins/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#efe1c0",
+    "theme": "light"
+  },
+  "pricing": "Free",
+  "keywords": [
+    "git",
+    "graph",
+    "branches",
+    "history",
+    "3d",
+    "visualization",
+    "redmine"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "SCM Providers",
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitVeins.open",
+        "title": "Git Veins: abrir lámina del repositorio",
+        "icon": "$(heart)"
+      },
+      {
+        "command": "gitVeins.pickRepo",
+        "title": "Git Veins: elegir repositorio"
+      }
+    ],
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "gitVeins",
+          "title": "Git Veins",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitVeins": [
+        {
+          "type": "webview",
+          "id": "gitVeins.view",
+          "name": "Git Veins"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "esbuild media/src/main.js --bundle --format=iife --minify --outfile=media/main.js",
+    "package": "npm run build && npx @vscode/vsce@3.2.1 package --allow-missing-repository --no-rewrite-relative-links"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "three": "0.160.0"
+  }
+}
